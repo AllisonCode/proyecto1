@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule ^inicio$ index.php
+RewriteRule ^ventas$ ventas.php
+RewriteRule ^zonas$ zonas.php
+RewriteRule ^marcas$ marcas.php
+RewriteRule ^modelos$ modelos.php
+RewriteRule ^usuarios$ usuarios.php
+RewriteRule ^logout$ logout.php

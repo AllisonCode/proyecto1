@@ -61,7 +61,7 @@
 						}else{
 							echo '<li>';
 						}?>
-                            <a href="index.php">
+                            <a href="inicio">
                                 <i class="fas fa-tachometer-alt"></i>Inicio</a>
                         </li>
                         <?php if(basename($_SERVER["SCRIPT_FILENAME"], '.php')=='ventas'){
@@ -69,7 +69,7 @@
 						}else{
 							echo '<li>';
 						}?>
-                            <a href="ventas.php">
+                            <a href="ventas">
                                 <i class="fas fa-money-bill-alt"></i>Ventas</a>
                         </li>
                         <?php if(basename($_SERVER["SCRIPT_FILENAME"], '.php')=='zonas'){
@@ -77,10 +77,10 @@
 						}else{
 							echo '<li>';
 						}?>
-                            <a href="zonas.php">
+                            <a href="zonas">
                                 <i class="fas fa-home"></i>Zonas</a>
                         </li>
-                        <li class="has-sub">
+                        <li class="has sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-car"></i>Vehículos</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -89,14 +89,14 @@
 						}else{
 							echo '<li>';
 						}?>
-                                    <a href="marcas.php">Marcas</a>
+                                    <a href="vehiculos/marcas"><i class="fas fa-car"></i>Marcas</a></a>
                                 </li>
                         <?php if(basename($_SERVER["SCRIPT_FILENAME"], '.php')=='modelos'){
 							echo '<li class="active">';
 						}else{
 							echo '<li>';
 						}?>
-                                    <a href="modelos.php">Modelos</a>
+                                    <a href="vehiculos/modelos"><i class="fas fa-car"></i>Modelos</a></a>
                                 </li>
                             </ul>
                         </li>
@@ -135,7 +135,7 @@
 						}else{
 							echo '<li>';
 						}?>
-                            <a href="index.php">
+                            <a href="inicio">
                                 <i class="fas fa-tachometer-alt"></i>Inicio</a>
                         </li>
                         <?php if(basename($_SERVER["SCRIPT_FILENAME"], '.php')=='ventas'){
@@ -143,7 +143,7 @@
 						}else{
 							echo '<li>';
 						}?>
-                            <a href="ventas.php">
+                            <a href="ventas">
                                 <i class="fas fa-money-bill-alt"></i>Ventas</a>
                         </li>
                         <?php if(basename($_SERVER["SCRIPT_FILENAME"], '.php')=='zonas'){
@@ -151,10 +151,10 @@
 						}else{
 							echo '<li>';
 						}?>
-                            <a href="zonas.php">
+                            <a href="zonas">
                                 <i class="fas fa-home"></i>Zonas</a>
                         </li>
-                        <li class="has-sub">
+                        <li class="has sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-car"></i>Vehículos</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -163,14 +163,14 @@
 						}else{
 							echo '<li>';
 						}?>
-                                    <a href="marcas.php">Marcas</a>
+                                    <a href="marcas"><i class="fas fa-car"></i>Marcas</a></a>
                                 </li>
                         <?php if(basename($_SERVER["SCRIPT_FILENAME"], '.php')=='modelos'){
 							echo '<li class="active">';
 						}else{
 							echo '<li>';
 						}?>
-                                    <a href="modelos.php">Modelos</a>
+                                    <a href="modelos"><i class="fas fa-car"></i>Modelos</a></a>
                                 </li>
                             </ul>
                         </li>
