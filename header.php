@@ -36,6 +36,16 @@
 </head>
 
 <body class="animsition">
+    <?php 
+    session_start();
+
+    if(isset($_SESSION['u_usuario'])){
+
+    }
+    else{
+        header("Location: login");
+    }
+    ?>
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -105,7 +115,7 @@
 						}else{
 							echo '<li>';
 						}?>
-                            <a href="usuarios.php">
+                            <a href="usuarios">
                                 <i class="fas fa-users"></i>Usuarios</a>
                         </li>
                         <li>
@@ -179,7 +189,7 @@
 						}else{
 							echo '<li>';
 						}?>
-                            <a href="usuarios.php">
+                            <a href="usuarios">
                                 <i class="fas fa-users"></i>Usuarios</a>
                         </li>
                         <li>
@@ -231,7 +241,7 @@
                                                 <div class="account-dropdown__item">
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="logout.php">
                                                     <i class="zmdi zmdi-power"></i>Cerrar Sesión</a>
                                             </div>
                                         </div>
