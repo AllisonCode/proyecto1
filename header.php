@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
+    <meta name="author" content="AllisonCode">
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
     <title>AutoSAL</title>
-
+<link rel="stylesheet" href="css/croppie.css">
+<link rel='stylesheet' href='css/croppie2.css'>
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -29,9 +30,23 @@
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-
+	<script type="text/javascript" src="js/jquery-pack.js"></script>
+	<script type="text/javascript" src="js/jquery.imgareaselect.min.js"></script>
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+	<style>
+	iframe {
+    width: 100%;
+    border: 0px solid black;
+}
+</style>
+	<style>
+	.cropit-preview {
+  /* You can specify preview size in CSS */
+  width: 960px;
+  height: 540px;
+}
+</style>
 <style>
 .loader {
   color: #8080ff;
@@ -177,11 +192,11 @@
 						}else{
 							echo '<li>';
 						}?>
-                            <a href="usuarios.php">
+                            <a href="usuarios">
                                 <i class="fas fa-users"></i>Usuarios</a>
                         </li>
                         <li>
-                            <a href="logout.php">
+                            <a href="logout">
                                 <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
                         </li>
                             </ul>
@@ -251,11 +266,11 @@
 						}else{
 							echo '<li>';
 						}?>
-                            <a href="usuarios.php">
+                            <a href="usuarios">
                                 <i class="fas fa-users"></i>Usuarios</a>
                         </li>
                         <li>
-                            <a href="logout.php">
+                            <a href="logout">
                                 <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
                         </li>
                             </ul>

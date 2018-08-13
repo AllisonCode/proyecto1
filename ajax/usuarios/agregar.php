@@ -1,20 +1,15 @@
 <?php
 include("../database.php");
-$id= $_REQUEST["id"];
-$sql = "SELECT * FROM usuarios WHERE idUsuario='".$id."'";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
 $sql = "SELECT * FROM zonas";
 $result2 = $conn->query($sql);
 ?>
 <div class="card">
-                                    <div class="card-header">Editar Usuario</div>
+                                    <div class="card-header">Agregar Usuario</div>
                                     <div class="card-body card-block">
-                                       <input type="hidden" id="idusuario" value="<?php echo $id; ?>">
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Nombre(s)</div>
-                                                    <input type="text" id="nombre" name="nombre" class="form-control" value="<?php echo $row["nombre"]; ?>">
+                                                    <input type="text" id="nombre2" name="nombre" class="form-control" value="" required="true">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-user"></i>
                                                     </div>
@@ -23,7 +18,7 @@ $result2 = $conn->query($sql);
 											<div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Apellido(s)</div>
-                                                    <input type="text" id="apellido" name="apellido" class="form-control" value="<?php echo $row["apellido"]; ?>">
+                                                    <input type="text" id="apellido2" name="apellido" class="form-control" value="" required="true">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-user"></i>
                                                     </div>
@@ -32,36 +27,10 @@ $result2 = $conn->query($sql);
 												<div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Sexo</div>
-                                                    <select name="sexo" id="sexo" class="form-control">
-													<?php 
-													for ($i = 1; $i <= 3; $i++) {
-													if($i==$row['sexo']){
-													switch ($i) {
-														case 1:
-														echo '<option value="'.$i.'" selected>Hombre</option>';
-														break;
-														case 2:
-														echo '<option value="'.$i.'" selected>Mujer</option>';
-														break;
-														case 3:
-														echo '<option value="'.$i.'" selected>Prefiero no especificar</option>';
-														break;
-													}	
-													}else{
-														switch ($i) {
-														case 1:
-														echo '<option value="'.$i.'">Hombre</option>';
-														break;
-														case 2:
-														echo '<option value="'.$i.'">Mujer</option>';
-														break;
-														case 3:
-														echo '<option value="'.$i.'">Prefiero no especificar</option>';
-														break;
-													}	
-													}
-													}
-													?>
+                                                    <select name="sexo" id="sexo2" class="form-control">
+													<option value="1" selected>Hombre</option>
+													<option value="2" >Mujer</option>
+													<option value="3" >Prefiero no especificar</option>
                                                     </select>
 													
                                                     <div class="input-group-addon">
@@ -72,7 +41,7 @@ $result2 = $conn->query($sql);
 											<div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Usuario</div>
-                                                    <input type="text" id="username" name="username" class="form-control" value="<?php echo $row["username"]; ?>">
+                                                    <input type="text" id="username2" name="username" class="form-control" value="" required="true">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-user"></i>
                                                     </div>
@@ -81,7 +50,7 @@ $result2 = $conn->query($sql);
 											<div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Contraseña</div>
-                                                    <input type="password" id="password" name="password" class="form-control"/>
+                                                    <input type="password" id="password2" name="password" class="form-control"/ required="true">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-asterisk"></i>
                                                     </div>
@@ -90,7 +59,7 @@ $result2 = $conn->query($sql);
 												<div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Zona</div>
-                                                    <select name="zona" id="zona" class="form-control">
+                                                    <select name="zona" id="zona2" class="form-control">
 													<?php while($row2 = $result2->fetch_assoc()) { 
 													if($row2['idZona']==$row['idZona']){
 														echo '<option value="'.$row2['idZona'].'" selected>'.$row2['nombreZona'].'</option>';
@@ -109,32 +78,9 @@ $result2 = $conn->query($sql);
 											<div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Rol</div>
-                                                    <select name="rol" id="rol" class="form-control">
-                                                        <?php 
-													for ($i = 1; $i <= 2; $i++) {
-													if($i==$row['rol']){
-													switch ($i) {
-														case 1:
-														echo '<option value="'.$i.'" selected>Administrador</option>';
-														break;
-														case 2:
-														echo '<option value="'.$i.'" selected>Vendedor</option>';
-														break;
-														
-													}	
-													}else{
-														switch ($i) {
-														case 1:
-														echo '<option value="'.$i.'">Administrador</option>';
-														break;
-														case 2:
-														echo '<option value="'.$i.'">Vendedor</option>';
-														break;
-														
-													}	
-													}
-													}
-													?>
+                                                    <select name="rol" id="rol2" class="form-control">
+                                                        <option value="1">Administrador</option>
+														<option value="2" selected>Vendedor</option>
                                                     </select>
                                                     <div class="input-group-addon">
                                                         <i class="fas fa-user"></i>
@@ -144,7 +90,7 @@ $result2 = $conn->query($sql);
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Email</div>
-                                                    <input type="email" id="email" name="email" class="form-control" value="<?php echo $row["email"]; ?>">
+                                                    <input type="email" id="email2" name="email" class="form-control" value="" required="true">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-envelope"></i>
                                                     </div>
@@ -153,7 +99,7 @@ $result2 = $conn->query($sql);
 											<div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Dirección</div>
-                                                    <input type="text" id="direccion" name="direccion" class="form-control" value="<?php echo $row["direccion"]; ?>">
+                                                    <input type="text" id="direccion2" name="direccion" class="form-control" value="" required="true">
                                                     <div class="input-group-addon">
                                                         <i class="fas fa-home"></i>
                                                     </div>
@@ -162,7 +108,7 @@ $result2 = $conn->query($sql);
 											<div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Teléfono</div>
-                                                    <input type="text" id="telefono" name="telefono" class="form-control" value="<?php echo $row["telefono"]; ?>">
+                                                    <input type="text" id="telefono2" name="telefono" class="form-control" value="" required="true">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-phone"></i>
                                                     </div>
@@ -171,7 +117,7 @@ $result2 = $conn->query($sql);
 											<div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">Fecha de Nacimiento</div>
-                                                    <input type="date" id="date" name="date" class="form-control" value="<?php echo $row["fechanacimiento"]; ?>"/>
+                                                    <input type="date" id="date2" name="date" class="form-control" value="" required="true"/>
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-calendar"></i>
                                                     </div>
@@ -180,15 +126,16 @@ $result2 = $conn->query($sql);
 											<div class="row">
 
               <div class="col" align="center"><div class="card">
-<iframe id="frameavatar"
+<iframe id="frameavatar2"
     title="Inline Frame Example"
 	height="100px"
 	scrolling="yes"
 	frameBorder="0"
-    src="avatar.php?img=<?php echo $row["username"]; mysqli_close($conn);?>">
+    src="avatar.php?user=nuevo">
 </iframe>
-<br><button class="btn btn-outline-success" onclick="actualizar()">Actualizar usuario</button>
-<button class="btn btn-danger" onclick="listartodos()">Cancelar</button></div>
+<input type="hidden" id="imagennuevousuario" value="unnameduser"/>
+<br><button class="btn btn-outline-success" onclick="agregarusuario()">Agregar usuario</button>
+	<button class="btn btn-danger" onclick="listartodos()">Cancelar</button></div>
             </div>
                                           
                                         

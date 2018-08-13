@@ -1,9 +1,15 @@
+
+                            <div class="table-data__tool-right">
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" onclick="agregarform()">
+                                            <i class="zmdi zmdi-plus"></i>Agregar usuario</button>
+                                    </div>
+<br>
 <div class="card">
 <div class="card-header">
                     <strong class="card-title">Lista de Usuarios</strong>
                   </div>
  <div class="table-responsive table-responsive-data2">
-                                    <table class="table table-data2">
+                                    <table id="tablausuarios" class="table table-data2">
                                         <thead>
                                             <tr>
                                                 <th>Avatar</th>
@@ -17,6 +23,7 @@
                                         </thead>
                                         <tbody>
 										
+										
 <?php 
 include("../database.php");
 
@@ -25,7 +32,7 @@ $result = $conn->query($sql);
 $data = '<tr class="tr-shadow">';
 if ($result->num_rows > 0) {		
 					while($row = $result->fetch_assoc()) {
-					$data.='<td><img src="/autosal/uploads/avatar_'.$row["ruta"].'" alt="John Doe" /></td>';
+					$data.='<td><img src="/autosal/uploads/avatar_'.$row["username"].'.jpg?random='.rand(1,100).'" alt="'.$row["nombre"].' '.$row["apellido"].'" /></td>';
 					$data.='<td>'.$row["nombre"].' '.$row["apellido"].'</td>';
                     $data.='<td><span class="block-email">'.$row["email"].'</span></td>';
                     $data.='<td>'.$row["username"].'</td>';
@@ -45,7 +52,7 @@ if ($result->num_rows > 0) {
                                                         <button class="item" title="Editar" name="editar" onclick="listarusuario('.$row["idUsuario"].')">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
-                                                        <button class="item" title="Eliminar" name="deleteuser'.$row["idUsuario"].'">
+                                                        <button class="item" title="Eliminar" name="deleteuser" onclick="eliminarusuario('.$row["idUsuario"].')">
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
                                                        
@@ -57,6 +64,9 @@ if ($result->num_rows > 0) {
 				}
 
 				echo $data;
+				mysqli_close($conn);
 ?>
                                         </tbody>
                                     </table>
+									</div>
+									</div>

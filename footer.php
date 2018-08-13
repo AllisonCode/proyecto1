@@ -25,7 +25,16 @@
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js">
     </script>
+<script>
+$('#image-cropper').cropit();
+$('#image-cropper').cropit({ imageState: { src: { 'uploads/avatar_default.jpg' } } });
 
+// Exporting cropped image
+$('.download-btn').click(function() {
+  var imageData = $('#image-cropper').cropit('export');
+  window.open(imageData);
+});
+</script>
 <script>
 	TweenMax.set('#circlePath', {
   attr: {
@@ -132,9 +141,13 @@ TweenMax.to(mainContainer, 20, {
 });
 mainTl.timeScale(1.1)
 </script>
+  
+                
     <!-- Main JS-->
     <script src="js/main.js"></script>
 	<script src="js/usuarios.js"></script>
+	<script  src="js/croppie.js"></script>
+	<script  src="js/croppie2.js"></script>
 </body>
 
 

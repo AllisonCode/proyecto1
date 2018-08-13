@@ -1,5 +1,3 @@
-<?php
-include 'header.php';
-echo "Hola mundo";
-include 'footer.php'
-?>
+<?php include 'header.php';?>
+Hola mundo
+<?php include 'footer.php'; ?>
