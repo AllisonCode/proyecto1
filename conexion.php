@@ -4,6 +4,12 @@
         echo "Conexion exitosa";
     }
   
+    function consulta(){
+
+        global $conexion, $consulta;
+        $sql = 'SELECT * FROM ventas';
+        return $conexion-> query($sql);
+    }
 
 
 ?>
