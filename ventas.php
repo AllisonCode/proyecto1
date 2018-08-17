@@ -31,7 +31,7 @@ $consulta = consulta();
                                                 <td><?php echo $venta['idZona']; ?></td>
                                                 <td><?php echo $venta['idModelo']; ?></td>
                                                 <td><?php echo $venta['idUsuario']; ?></td>
-                                                <td><?php echo $venta['precio']; ?></td>
+                                                <td>$<?php echo  $venta['precio']; ?></td>
                                                 <td><?php echo $venta['fechahora']; ?></td>
                                                 <td><?php echo $venta['cliente']; ?></td>
                                                 <td><?php echo $venta['metodopago']; ?></td>
