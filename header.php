@@ -33,6 +33,8 @@
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
 
+    <link href="css/tableexport.min.css" rel="stylesheet" >
+
 </head>
 
 <body class="animsition">
@@ -46,6 +48,7 @@
         header("Location: login");
     }
     ?>
+     
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -256,3 +259,4 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
             <!-- HEADER DESKTOP-->
+      

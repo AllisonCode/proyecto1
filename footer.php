@@ -2,12 +2,14 @@
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
         </div>
-
+       
     </div>
-
+    
     <!-- Jquery JS-->
+    
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
+   
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
@@ -25,9 +27,15 @@
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js">
     </script>
-
+    <script src="js/FileSaver.min.js"></script>
+    <script src="js/tableexport.min.js"></script>
+    <script>
+     $("table").tableExport();
+    </script>
+                     
     <!-- Main JS-->
     <script src="js/main.js"></script>
+   
 
 </body>
 
