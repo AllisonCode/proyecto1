@@ -27,11 +27,8 @@
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js">
     </script>
-    <script src="js/FileSaver.min.js"></script>
-    <script src="js/tableexport.min.js"></script>
-    <script>
-     $("table").tableExport();
-    </script>
+
+
                      
     <!-- Main JS-->
     <script src="js/main.js"></script>

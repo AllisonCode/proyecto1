@@ -1,0 +1,110 @@
+<html>
+<head>
+<script src="js/FileSaver.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.0.0/js/tableexport.js"></script>
+
+</head>
+
+<body>
+<div>
+        <button class="btn btn-success" id="customXLSButton">I am a BIG custom XLS button</button>
+    </div>
+    <br>
+    <div>
+        <button class="btn btn-success" id="customCSVButton">I am a SMALL custom CSV button</button>
+    </div>
+    <br>
+
+    <table id="export-buttons-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Age</th>
+            <th>Salary</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Thor Walton</td>
+            <td>Regional Director</td>
+            <td>45</td>
+            <td>$98,540</td>
+        </tr>
+        <tr>
+            <td>Travis Clarke</td>
+            <td>Software Engineer</td>
+            <td>30</td>
+            <td>$275,000</td>
+        </tr>
+        <tr>
+            <td>Suki Burks</td>
+            <td>Office Manager</td>
+            <td>22</td>
+            <td>$67,670</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td class="disabled"></td>
+            <td class="disabled"></td>
+            <td class="disabled"></td>
+            <th>$441,210</th>
+        </tr>
+        </tfoot>
+    </table>
+
+    <br>
+	<script type="text/javascript" src="https://tableexport.v3.travismclarke.com/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://tableexport.v3.travismclarke.com/bower_components/js-xlsx/dist/xlsx.core.min.js"></script>
+<script type="text/javascript" src="https://tableexport.v3.travismclarke.com/bower_components/blobjs/Blob.min.js"></script>
+<script type="text/javascript" src="https://tableexport.v3.travismclarke.com/bower_components/file-saverjs/FileSaver.min.js"></script>
+<script type="text/javascript" src="https://tableexport.v3.travismclarke.com/dist/js/tableexport.min.js"></script>
+<script type="text/javascript" src="https://tableexport.v3.travismclarke.com/assets/js/analytics.js"></script>
+<script>
+
+    var tableId = 'export-buttons-table';
+    var ExportButtons = document.getElementById(tableId);
+
+    var instance = new TableExport(ExportButtons, {
+        formats: ['xls', 'csv'],
+        exportButtons: false
+    });
+    // **** jQuery **************************
+    //    $(ExportButtons).tableExport({
+    //        formats: ['xls'],
+    //        exportButtons: false
+    //    });
+    // **************************************
+
+    var XLS = instance.CONSTANTS.FORMAT.XLS;
+    var CSV = instance.CONSTANTS.FORMAT.CSV;
+
+    //                                          // "id"  // format
+    var exportDataXLS = instance.getExportData()[tableId][XLS];
+    var exportDataCSV = instance.getExportData()[tableId][CSV];
+
+    // get filesize
+    var bytesXLS = instance.getFileSize(exportDataXLS.data, exportDataXLS.fileExtension);
+    var bytesCSV = instance.getFileSize(exportDataCSV.data, exportDataCSV.fileExtension);
+
+    console.log('filesize (XLS):', bytesXLS + 'B');
+    console.log('filesize (CSV):', bytesCSV + 'B');
+
+    var XLSbutton = document.getElementById('customXLSButton');
+    XLSbutton.addEventListener('click', function (e) {
+        //                   // data             // mime                 // name                 // extension
+        instance.export2file(exportDataXLS.data, exportDataXLS.mimeType, exportDataXLS.filename, exportDataXLS.fileExtension);
+    });
+
+    var CSVbutton = document.getElementById('customCSVButton');
+    CSVbutton.addEventListener('click', function (e) {
+        //                   // data             // mime                 // name                 // extension
+        instance.export2file(exportDataCSV.data, exportDataCSV.mimeType, exportDataCSV.filename, exportDataCSV.fileExtension);
+    });
+
+</script>
+
+	</body>
+	
+	</html>
