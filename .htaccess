@@ -7,3 +7,4 @@ RewriteRule ^marcas$ marcas.php
 RewriteRule ^modelos$ modelos.php
 RewriteRule ^usuarios$ usuarios.php
 RewriteRule ^logout$ logout.php
+RewriteRule ^login$ login.php
