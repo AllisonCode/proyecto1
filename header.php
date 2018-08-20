@@ -131,6 +131,16 @@ if( fechafinal < fechainicio){
 </head>
 
 <body class="animsition">
+    <?php 
+    session_start();
+
+    if(isset($_SESSION['u_usuario'])){
+
+    }
+    else{
+        header("Location: login");
+    }
+    ?>
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -326,7 +336,7 @@ if( fechafinal < fechainicio){
                                                 <div class="account-dropdown__item">
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="logout.php">
                                                     <i class="zmdi zmdi-power"></i>Cerrar Sesión</a>
                                             </div>
                                         </div>

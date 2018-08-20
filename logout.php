@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
-echo "Hola mundo";
-include 'footer.php'
+session_start();
+session_destroy();
+header("Location:login")
 ?>
