@@ -180,6 +180,7 @@ $result2 = $conn->query($sql);
 											<div class="row">
 
               <div class="col" align="center"><div class="card">
+			  
 <iframe id="frameavatar"
     title="Inline Frame Example"
 	height="100px"

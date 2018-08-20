@@ -9,8 +9,11 @@ function readFile(input) {
 		var reader = new FileReader();
 		reader.onload = function (e) {
 			$('.upload-demo').addClass('ready');
-			parent.document.getElementById('frameavatar').height="700px";
+		if(parent.document.getElementById('valoriframe').value=="agregar"){
 			parent.document.getElementById('frameavatar2').height="700px";
+		}else{
+			parent.document.getElementById('frameavatar').height="700px";
+		}
 			$('#cropImagePop').modal('show');
 			rawImg = e.target.result;
 		}
@@ -52,8 +55,11 @@ $('#cropImageBtn').on('click', function (ev) {
 		html = '<img src="' + resp + '" />';
 		$("#upload-image-i").html(html);
 		$('#cropImagePop').modal('hide');
-	parent.document.getElementById('frameavatar').height="100px";
-	parent.document.getElementById('frameavatar2').height="100px";
+if(parent.document.getElementById('valoriframe').value=="agregar"){
+			parent.document.getElementById('frameavatar2').height="100px";
+		}else{
+			parent.document.getElementById('frameavatar').height="100px";
+		}
 	parent.document.getElementById('imagennuevousuario').value=resp;
 	}else{	
 $.ajax({
@@ -64,8 +70,11 @@ $.ajax({
 		html = '<img src="' + resp + '" />';
 		$("#upload-image-i").html(html);
 		$('#cropImagePop').modal('hide');
-		parent.document.getElementById('frameavatar').height="100px";
-		parent.document.getElementById('frameavatar2').height="100px";
+if(parent.document.getElementById('valoriframe').value=="agregar"){
+			parent.document.getElementById('frameavatar2').height="100px";
+		}else{
+			parent.document.getElementById('frameavatar').height="100px";
+		}
 	}
 	})};
 $('#cropImagePop').modal('hide');

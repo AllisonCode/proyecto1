@@ -32,7 +32,7 @@ $result = $conn->query($sql);
 $data = '<tr class="tr-shadow">';
 if ($result->num_rows > 0) {		
 					while($row = $result->fetch_assoc()) {
-					$data.='<td><img src="/autosal/uploads/avatar_'.$row["username"].'.jpg?random='.rand(1,100).'" alt="'.$row["nombre"].' '.$row["apellido"].'" /></td>';
+					$data.='<td><img src="uploads/avatar_'.$row["username"].'.jpg?random='.rand(1,100).'" alt="'.$row["nombre"].' '.$row["apellido"].'" width="100px" height="100px" /></td>';
 					$data.='<td>'.$row["nombre"].' '.$row["apellido"].'</td>';
                     $data.='<td><span class="block-email">'.$row["email"].'</span></td>';
                     $data.='<td>'.$row["username"].'</td>';

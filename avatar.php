@@ -14,7 +14,6 @@
 
 <body>
 
-  <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Send Photo with PHP</title>
@@ -33,7 +32,6 @@
               <div class="container">
                 <div class="row">
                   <div class="col-xs-12" align="center">
-
 
 <?php if(!isset($_GET['user'])){ ?> <input type="hidden" id="nombreimagen" value="<?php echo $_GET["img"];  ?>"/> <?php }else{ ?>
 <input type="hidden" id="nombreimagen" value="unnameduser"/> <?php } ?>

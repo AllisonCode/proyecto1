@@ -32,6 +32,7 @@ $("#editar").ajaxError(function(event,request,settings,exception){
  $("#editar").html("No se pudo cargar. Intentelo de nuevo más tarde.");
   });
   function onSuccess (data)   {
+	  document.getElementById("valoriframe").value = "editar";
 	  document.getElementById("editar").setAttribute("style", "");
 	  document.getElementById("listar").setAttribute("style", "display: none;");
 	  document.getElementById("editar").innerHTML= data;}
@@ -82,6 +83,7 @@ $("#listar").ajaxError(function(event,request,settings,exception){
  $("#listar").html("No se pudo cargar. Intentelo de nuevo más tarde.");
   });
   function onSuccess (data)   {
+	  document.getElementById("valoriframe").value = "agregar";
 	  document.getElementById("agregar").setAttribute("style", "");
 	  document.getElementById("listar").setAttribute("style", "display: none;");
 	  document.getElementById("agregar").innerHTML= data;}

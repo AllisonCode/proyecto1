@@ -8,7 +8,15 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="AllisonCode">
     <meta name="keywords" content="au theme template">
-
+<script>
+function validarfecha(){
+	var fechafinal = $('#final').val();
+	var fechainicio = $('#inicio').val()
+if( fechafinal < fechainicio){
+	$('#final').val(fechainicio);
+}
+}
+</script>
     <!-- Title Page-->
     <title>AutoSAL</title>
 <link rel="stylesheet" href="css/croppie.css">
@@ -333,3 +341,4 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
             <!-- HEADER DESKTOP-->
+			<?php date_default_timezone_set ('America/El_Salvador'); ?>

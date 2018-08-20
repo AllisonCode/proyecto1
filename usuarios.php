@@ -22,7 +22,7 @@ error_reporting (E_ALL ^ E_NOTICE);
 session_start(); //Do not remove this
 ?>
 <?php include 'header.php'?>
-
+<input id="valoriframe" type="hidden" value="xd" />
 <br>
 <br>
 <div id="cargando" >
@@ -35,6 +35,7 @@ session_start(); //Do not remove this
 <body onload="listartodos()">
  <div id="listar">
  </div>
+ 
 </body>
 
 <?php include 'footer.php' ?>
