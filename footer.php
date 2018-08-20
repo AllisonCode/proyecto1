@@ -2,12 +2,14 @@
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
         </div>
-
+       
     </div>
-
+    
     <!-- Jquery JS-->
+    
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
+   
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
@@ -29,6 +31,7 @@
 $('#image-cropper').cropit();
 $('#image-cropper').cropit({ imageState: { src: { 'uploads/avatar_default.jpg' } } });
 
+<<<<<<< HEAD
 // Exporting cropped image
 $('.download-btn').click(function() {
   var imageData = $('#image-cropper').cropit('export');
@@ -147,7 +150,9 @@ mainTl.timeScale(1.1)
     <script src="js/main.js"></script>
 	<script src="js/usuarios.js"></script>
 	<script  src="js/croppie.js"></script>
-	<script  src="js/croppie2.js"></script>
+	<script  src="js/croppie2.js"></script>                 
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
 </body>
 
 

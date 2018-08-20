@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+
+<?php session_start(); ?>
+<?php 
+
+    if(!isset($_SESSION['u_usuario'])){
+		header("Location:login");
+	}else{
+		if($_SESSION['u_rol']==2){
+			header("Location:logout.php");
+		}
+    }
+	    
+    ?>
 <html lang="en">
 
 <head>
@@ -131,16 +143,7 @@ if( fechafinal < fechainicio){
 </head>
 
 <body class="animsition">
-    <?php 
-    session_start();
-
-    if(isset($_SESSION['u_usuario'])){
-
-    }
-    else{
-        header("Location: login");
-    }
-    ?>
+    
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -313,23 +316,23 @@ if( fechafinal < fechainicio){
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="uploads/avatar_<?php echo $_SESSION['u_usuario'] ?>.jpg" alt="<?php echo $_SESSION['u_nombre'] ?>" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#"><?php echo $_SESSION['u_nombre'] ?></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="uploads/avatar_<?php echo $_SESSION['u_usuario'] ?>.jpg" alt="<?php echo $_SESSION['u_nombre'] ?>" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="#"><?php echo $_SESSION['u_nombre'] ?></a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email"><?php echo $_SESSION['u_correo'] ?></span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
@@ -351,4 +354,5 @@ if( fechafinal < fechainicio){
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
             <!-- HEADER DESKTOP-->
-			<?php date_default_timezone_set ('America/El_Salvador'); ?>
+	<?php 
+	date_default_timezone_set ('America/El_Salvador'); ?>
